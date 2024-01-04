@@ -1,5 +1,5 @@
 # Use a Node.js base image
-FROM node:21.2.0
+FROM node:16.14.0
 
 # Set the working directory inside the container
 WORKDIR /
@@ -14,7 +14,9 @@ RUN npm install
 COPY . .
 
 # Expose the port that the app runs on
-EXPOSE 8080
+EXPOSE 6969
+
+RUN npm run build
 
 # Command to run the application when the container starts
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "serve"]

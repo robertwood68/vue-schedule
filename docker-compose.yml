@@ -12,5 +12,5 @@ services:
       - .:/app  # Mount the current directory into the container at /app
     working_dir: /app  # Set the working directory inside the container
     environment:
-      NODE_ENV: development  # Set environment variable if needed
-    command: npm run dev  # Command to run the application when the container starts
+      NODE_ENV: production  # Set environment variable if needed
+    command: npm run serve  # Command to run the application when the container starts
