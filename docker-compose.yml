@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assuming your Dockerfile is named 'Dockerfile'
+    image: robwoodd/schedule  # Specify the repository and image name
+    ports:
+      - "6969:8080"  # Map container port 8080 to host port 8080
+    volumes:
+      - .:/app  # Mount the current directory into the container at /app
+    working_dir: /app  # Set the working directory inside the container
+    environment:
+      NODE_ENV: development  # Set environment variable if needed
+    command: npm run dev  # Command to run the application when the container starts
